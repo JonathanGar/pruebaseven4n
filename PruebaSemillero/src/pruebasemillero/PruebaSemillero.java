@@ -11,11 +11,10 @@ public class PruebaSemillero {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Hello World!");
-        // System.out.println(FizzBuzz.printFizzBuzz(1, 15));
+        // pasamos los modulos fizz=2 buzz=5
         FizzBuzz fb = new FizzBuzz(3, 5);
         try{
+            // generamos la cadena FizzBuzz en el rango [1, 100]
             System.out.println(fb.getFizzBuzz(1, 100));
         }catch(OutOfMemoryError e){
             System.out.println("Maxima capacidad de memoria alcanzada con el rango proporcionado...");

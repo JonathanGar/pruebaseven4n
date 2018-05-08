@@ -10,21 +10,16 @@ public class FizzBuzz {
     private int mcm;
     
     // Constructor
-    public FizzBuzz(int mod_fizz, int mod_buzz){
-        if(mod_fizz == 0 || mod_buzz == 0) {
-            System.out.println("multiplos FizzBuzz deben ser diferentes de cero");
-            throw new ArithmeticException();
-        }else {
-            this.mod_fizz = mod_fizz;
-            this.mod_buzz = mod_buzz;
-            set_mcm(mod_fizz, mod_buzz);
-        }
+    public FizzBuzz(int mod_fizz, int mod_buzz) throws ArithmeticException{            
+        this.mod_fizz = mod_fizz;
+        this.mod_buzz = mod_buzz;
+        set_mcm(mod_fizz, mod_buzz);
     }
     
     /**
      *
-     * @param from: limite inferior de la cadena
-     * @param to: limite superior de la cadena
+     * @param from limite inferior de la cadena
+     * @param to limite superior de la cadena
      * @return cadena que contiene los numeros FizzBuzz en el rango [from, to]
      */    
     public String getFizzBuzz(int from, int to){        
@@ -49,13 +44,17 @@ public class FizzBuzz {
             result = result.substring(0, result.length() - 1);
                                                
         }else {
-            System.out.println("Modulos fizz buzz no permitidos");
+            System.out.println("Modulos fizz buzz no permitidos from > to");
             result = sb.toString();
         }           
         return result;
     }
     
-    private void set_mcm(int n1, int n2) {        
+    private void set_mcm(int n1, int n2) { 
+        if (n1 == 0 || n2 == 0){
+            System.out.println("multiplos FizzBuzz deben ser diferentes de cero");
+            throw new ArithmeticException();
+        }
         mcm = Utilities.mcm(n1, n2);
     }
     
@@ -63,7 +62,7 @@ public class FizzBuzz {
         return mod_fizz;
     }
 
-    public void setMod_fizz(int mod_fizz) {
+    public void setMod_fizz(int mod_fizz) throws ArithmeticException{
         this.mod_fizz = mod_fizz;
         set_mcm(mod_fizz, this.mod_buzz);
     }
@@ -72,7 +71,7 @@ public class FizzBuzz {
         return mod_buzz;
     }
 
-    public void setMod_buzz(int mod_buzz) {
+    public void setMod_buzz(int mod_buzz) throws ArithmeticException{
         this.mod_buzz = mod_buzz;
         set_mcm(this.mod_fizz, mod_buzz);
     }
