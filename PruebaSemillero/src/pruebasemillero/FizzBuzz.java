@@ -45,7 +45,7 @@ public class FizzBuzz {
                                                
         }else {
             System.out.println("Modulos fizz buzz no permitidos from > to");
-            result = sb.toString();
+            result = "";
         }           
         return result;
     }

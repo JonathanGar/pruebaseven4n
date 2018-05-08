@@ -21,7 +21,7 @@ public class Utilities {
         int _mcm = (n1 > n2) ? n1 : n2;
 
         while(true) {
-            if( _mcm % n1 == 0 && _mcm % n2 == 0 ) {
+            if( _mcm % n1 == 0 && _mcm % n2 == 0 && _mcm != 0) {
                 break;
             }
             _mcm++;
