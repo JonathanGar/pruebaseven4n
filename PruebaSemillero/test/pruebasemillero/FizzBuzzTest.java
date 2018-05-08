@@ -1,8 +1,6 @@
 package pruebasemillero;
 
 import java.util.Arrays;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -22,8 +20,8 @@ public class FizzBuzzTest {
    
     @RunWith(Parameterized.class)
     public static class FizzBuzzTestParameterized {
-        private int mod_fizz, mod_buzz, from, to;
-        private String exp;
+        private final int mod_fizz, mod_buzz, from, to;
+        private final String exp;
         private FizzBuzz instance;
         
         @Parameters
